@@ -1,5 +1,6 @@
 [versions]
 agp = "8.9.2"
+calendarview = "<latest-version>"
 jbcrypt = "0.4"
 kotlin = "2.0.21"
 coreKtx = "1.16.0"
@@ -13,6 +14,7 @@ constraintlayout = "2.2.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+calendarview = { module = "com.github.kizitonwose:CalendarView", version.ref = "calendarview" }
 jbcrypt = { module = "org.mindrot:jbcrypt", version.ref = "jbcrypt" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

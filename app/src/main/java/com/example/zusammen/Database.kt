@@ -4,15 +4,16 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import org.mindrot.jbcrypt.BCrypt
 
-@Database(entities = [User::class], version = 1)
+@Database(entities = [User::class, Note::class, Event::class],
+    version = 1,
+    exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
+    abstract fun noteDao(): NoteDao
+    abstract fun eventDao(): EventDao
 
     companion object {
         @Volatile
@@ -25,7 +26,7 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "wedding_app_database"
                 )
-                    .fallbackToDestructiveMigration()
+
                     .build()
                 INSTANCE = instance
                 instance

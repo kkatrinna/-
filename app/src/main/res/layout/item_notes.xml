@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Заголовок заметки -->
+        <TextView
+            android:id="@+id/tvNoteTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Пример заголовка"
+            android:textColor="@color/dark_green"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Пример заголовка"/>
+
+        <!-- Краткое содержание -->
+        <TextView
+            android:id="@+id/tvNoteContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="Пример текста заметки, который может быть длинным и будет обрезан после двух строк"
+            android:textColor="@color/dark_green"
+            android:textSize="14sp"
+            tools:text="Пример текста заметки"/>
+
+        <!-- Дата и иконки действий -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvNoteDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12.05.2023"
+                android:textColor="@color/dark_green"
+                android:textSize="12sp"
+                tools:text="01.04.2025"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/btnEditProfile"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_edit"
+                android:clickable="true"
+                android:focusable="true"
+                app:tint="@color/dark_green" />
+
+            <ImageView
+                android:id="@+id/ibDeleteNote"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                app:tint="@android:color/holo_red_dark"
+                android:src="@drawable/ic_delete"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
